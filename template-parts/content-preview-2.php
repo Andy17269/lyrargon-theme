@@ -1,0 +1,75 @@
+<article class="post card bg-white shadow-sm border-0 <?php if (get_option('lyrargon_enable_into_article_animation') == 'true'){echo 'post-preview';} ?> post-preview-layout-2" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<?php if (argon_has_post_thumbnail()) { ?>
+	<header class="post-header post-header-with-thumbnail">
+		<a class="post-thumbnail-link" href="<?php the_permalink(); ?>">
+			<?php
+				$thumbnail_url = argon_get_post_thumbnail();
+				if (get_option('lyrargon_enable_lazyload') != 'false'){
+					echo "<img class='post-thumbnail lazyload' src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABBJREFUeNpi+P//PwNAgAEACPwC/tuiTRYAAAAASUVORK5CYII=' data-original='" . esc_url($thumbnail_url) . "' alt='" . esc_attr(get_the_title()) . "' style='opacity: 0;'>";
+				}else{
+					echo "<img class='post-thumbnail' src='" . esc_url($thumbnail_url) . "' alt='" . esc_attr(get_the_title()) . "'>";
+				}				
+			?>
+		</a>
+	</header>
+	<?php } ?>
+
+	<div class="post-content-container">
+		<a class="post-title" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+		<div class="post-meta">
+			<?php
+				$metaList = explode('|', get_option('lyrargon_article_meta', 'time|views|comments|categories'));
+				// 首页文章卡片精简信息冗余：去除发布时间
+				$metaList = array_values(array_diff($metaList, array('time', 'edittime')));
+				if (is_sticky() && is_home() && ! is_paged()) array_unshift($metaList, "sticky");
+				if (post_password_required()) array_unshift($metaList, "needpassword");
+				for ($i = 0; $i < count($metaList); $i++){
+					if ($i > 0) echo ' <div class="post-meta-devide">|</div> ';
+					echo get_article_meta($metaList[$i]);
+				}
+				global $post;
+				$post_content_full = apply_filters('the_content', preg_replace( '<!--more(.*?)-->', '', $post -> post_content));
+			?>
+			<?php if (!post_password_required() && get_option("lyrargon_show_readingtime") != "false" && is_readingtime_meta_hidden() == False) echo get_article_reading_time_meta($post_content_full); ?>
+		</div>
+		<?php
+			$trim_words_count = get_option('lyrargon_trim_words_count', 175);
+		?>
+		<?php if ($trim_words_count > 0){ ?>
+			<div class="post-content">
+				<?php
+					if (get_option("lyrargon_hide_shortcode_in_preview") == 'true'){
+						$preview = wp_trim_words(do_shortcode(get_the_content('...')), $trim_words_count);
+					}else{
+						$preview = wp_trim_words(get_the_content('...'), $trim_words_count);
+					}
+					if (post_password_required()){
+						$preview = __("这篇文章受密码保护，输入密码才能阅读", 'lyrargon');
+					}
+					if ($preview == ""){
+						$preview = __("这篇文章没有摘要", 'lyrargon');
+					}
+					if ($post -> post_excerpt){
+						$preview = $post -> post_excerpt;
+					}
+					echo $preview;
+				?>
+			</div>
+		<?php
+			}
+		?>
+		<?php if (has_tag()) { ?>
+			<div class="post-tags">
+				<i class="fa-solid fa-tags" aria-hidden="true"></i>
+				<?php
+					$tags = get_the_tags();
+					foreach ($tags as $tag) {
+						echo "<a href='" . get_tag_link($tag -> term_id) . "' target='_blank' class='tag badge badge-secondary post-meta-detail-tag'>" . $tag -> name . "</a>";
+					}
+					echo '<button type="button" class="post-tags-toggle tag badge badge-secondary post-meta-detail-tag" aria-expanded="false" title="' . esc_attr__('展开/收起标签', 'lyrargon') . '"><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>';
+					echo '<span class="post-tags-extra"></span>';
+				?>
+			</div>
+		<?php } ?>
+	</div>
+</article>

@@ -1,0 +1,14 @@
+import './alert/alert.js';
+import './admonition/admonition.js';
+import './collapse/collapse.js';
+import './github/github.js';
+import './timeline/timeline.js';
+import './progressbar/progressbar.js';
+import './todolist/todolist.js';
+import './tabpanel/tabpanel.js';
+import './friendlinks/friendlinks.js';
+import './sfriendlinks/sfriendlinks.js';
+import './hidden/hidden.js';
+import './video/video.js';
+import './noshortcode/noshortcode.js';
+import './hide-reading-time/hide-reading-time.js';

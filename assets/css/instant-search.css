@@ -1,0 +1,102 @@
+/*即时搜索 - WP REST 实时联想下拉（复用现有搜索框 UI 风格）*/
+#navbar_search_input_container,
+.leftbar-search-button,
+#lyrargon_serach_form,
+#navbar_global .navbar-collapse-header {
+	position: relative;
+}
+.search-suggest {
+	position: absolute;
+	top: calc(100% + 6px);
+	left: 0;
+	right: 0;
+	z-index: 1080;
+	display: none;
+	max-height: 60vh;
+	overflow-y: auto;
+	background: var(--color-widgets, #fff);
+	border-radius: var(--card-radius, 4px);
+	box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.15);
+}
+.search-suggest.open {
+	display: block;
+	animation: search-suggest-in 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.search-suggest.closing {
+	pointer-events: none;
+	animation: search-suggest-out 0.18s ease forwards;
+}
+@keyframes search-suggest-in {
+	from { opacity: 0; transform: translateY(-8px) scale(0.985); }
+	to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes search-suggest-out {
+	from { opacity: 1; transform: translateY(0) scale(1); }
+	to   { opacity: 0; transform: translateY(-8px) scale(0.985); }
+}
+.search-suggest-item {
+	display: flex;
+	align-items: center;
+	padding: 0.5rem 0.75rem;
+	color: var(--color-text, #32325d);
+	text-decoration: none;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+.search-suggest-item:last-of-type {
+	border-bottom: none;
+}
+.search-suggest-item:hover {
+	background: rgba(0, 0, 0, 0.04);
+}
+.search-suggest-thumb {
+	flex: 0 0 auto;
+	width: 42px;
+	height: 42px;
+	margin-right: 0.65rem;
+	object-fit: cover;
+	border-radius: var(--card-radius, 4px);
+}
+.search-suggest-main {
+	display: flex;
+	flex-direction: column;
+	min-width: 0;
+}
+.search-suggest-title {
+	font-weight: 600;
+	font-size: 0.95rem;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.search-suggest-excerpt {
+	font-size: 0.8rem;
+	color: #8898aa;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.search-suggest-more {
+	display: block;
+	padding: 0.55rem 0.75rem;
+	text-align: center;
+	font-size: 0.85rem;
+	color: var(--themecolor);
+	text-decoration: none;
+}
+.search-suggest-more:hover {
+	background: rgba(0, 0, 0, 0.04);
+}
+html.darkmode .search-suggest {
+	background: var(--color-widgets, #1e1e1e);
+}
+html.darkmode .search-suggest-item {
+	color: #e9ecef;
+	border-color: rgba(255, 255, 255, 0.08);
+}
+html.darkmode .search-suggest-item:hover,
+html.darkmode .search-suggest-more:hover {
+	background: rgba(255, 255, 255, 0.06);
+}
+html.darkmode .search-suggest-excerpt {
+	color: #adb5bd;
+}
