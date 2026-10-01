@@ -1,0 +1,95 @@
+# ---------------------------------------------------------------
+# Lyrargon Theme - Git ignore rules
+#
+# 注意：本仓库是 WordPress 主题，主题源码（*.php / *.css / *.js /
+# 语言包 / stickers / assets/vendor 等）必须全部纳入版本控制。
+# 因此这里只忽略操作系统、编辑器、依赖与临时文件，不要添加诸如
+# index.php、wp-*.php、vendor/、dist/ 之类的泛化规则。
+# ---------------------------------------------------------------
+
+# ---------- 操作系统 / 文件系统 ----------
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
+.fseventsd
+.DocumentRevisions-V100
+.TemporaryItems
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+__MACOSX/
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# ---------- 编辑器 / IDE ----------
+.idea/
+*.iml
+*.ipr
+*.iws
+.project
+.classpath
+.settings/
+.buildpath
+nbproject/private/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*.swn
+*~
+.#*
+\#*#
+.history/
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/tasks.json
+!.vscode/launch.json
+
+# ---------- Node / 构建依赖 ----------
+node_modules/
+.pnpm-store/
+.yarn/
+yarn-error.log*
+npm-debug.log*
+.npm/
+.npmrc
+.eslintcache
+.stylelintcache
+.parcel-cache/
+.cache/
+
+# ---------- 环境变量 / 密钥 ----------
+.env
+.env.*
+!.env.example
+
+# ---------- 临时 / 备份文件 ----------
+*.log
+*.bak
+*.orig
+*.rej
+*.tmp
+*.temp
+*.pid
+*.seed
+*.swp
+*.sql
+*.tar
+*.tar.gz
+*.zip
+.phpunit.result.cache
+.phpcs-cache
+
+# ---------- 本地开发配置 ----------
+wp-config.php
+.htaccess
+.claude/
+/scratch/
+/tmp/
