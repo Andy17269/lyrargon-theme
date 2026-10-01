@@ -5,6 +5,8 @@
 
 [![GitHub last commit](https://img.shields.io/github/last-commit/Andy17269/lyrargon?style=flat-square)](https://github.com/Andy17269/lyrargon/commits/main) [![GitHub Release Date](https://img.shields.io/github/release-date/Andy17269/lyrargon?style=flat-square)](https://github.com/Andy17269/lyrargon/releases) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Andy17269/lyrargon?style=flat-square)
 
+![Lyrargon 主题预览](readme/theme-screenshot.webp)
+
 # 特性
 
 + **基于 argon-theme 改进** - 在 argon-theme 的基础上进行了大量改进，改善了细节体验，增强了主题的可定制性和功能性
