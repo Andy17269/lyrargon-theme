@@ -3,7 +3,7 @@
 							echo get_option('lyrargon_footer_html');
 						?>
 						<div>
-							Theme <a href="https://github.com/Andy17269/lyrargon" target="_blank"><strong>Lyrargon</strong></a><?php if (get_option('lyrargon_hide_footer_author') != 'true') {echo " By solstice23 & AndyWen"; }?></div>
+							Theme <a href="https://github.com/Andy17269/lyrargon-theme" target="_blank"><strong>Lyrargon</strong></a><?php if (get_option('lyrargon_hide_footer_author') != 'true') {echo " By solstice23 & AndyWen"; }?></div>
 					</footer>
 				</main>
 			</div>

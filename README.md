@@ -1,9 +1,9 @@
 # Lyrargon
 ✨ Lyrargon - 一个轻盈、简洁的 WordPress 主题，基于 [solstice23](https://github.com/solstice23) 的 [argon-theme](https://github.com/solstice23/argon-theme) 改进.
 
-[![GitHub release](https://img.shields.io/github/v/release/Andy17269/lyrargon?color=%232196f3&style=for-the-badge)](https://github.com/Andy17269/lyrargon/releases) [![GitHub](https://img.shields.io/github/license/Andy17269/lyrargon?color=blue&style=for-the-badge)](https://github.com/Andy17269/lyrargon/blob/main/LICENSE)
+[![GitHub release](https://img.shields.io/github/v/release/Andy17269/lyrargon-theme?color=%232196f3&style=for-the-badge)](https://github.com/Andy17269/lyrargon-theme/releases) [![GitHub](https://img.shields.io/github/license/Andy17269/lyrargon-theme?color=blue&style=for-the-badge)](https://github.com/Andy17269/lyrargon-theme/blob/main/LICENSE)
 
-[![GitHub last commit](https://img.shields.io/github/last-commit/Andy17269/lyrargon?style=flat-square)](https://github.com/Andy17269/lyrargon/commits/main) [![GitHub Release Date](https://img.shields.io/github/release-date/Andy17269/lyrargon?style=flat-square)](https://github.com/Andy17269/lyrargon/releases) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Andy17269/lyrargon?style=flat-square)
+[![GitHub last commit](https://img.shields.io/github/last-commit/Andy17269/lyrargon-theme?style=flat-square)](https://github.com/Andy17269/lyrargon-theme/commits/main) [![GitHub Release Date](https://img.shields.io/github/release-date/Andy17269/lyrargon-theme?style=flat-square)](https://github.com/Andy17269/lyrargon-theme/releases) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Andy17269/lyrargon-theme?style=flat-square)
 
 ![Lyrargon 主题预览](readme/theme-screenshot.webp)
 
@@ -27,7 +27,7 @@
 
 # 安装
 
-在 [Releases](https://github.com/Andy17269/lyrargon/releases) 页面下载最新的 `.zip` 文件，在 WordPress 后台 "外观 > 主题" 页面上传并启用。
+在 [Releases](https://github.com/Andy17269/lyrargon-theme/releases) 页面下载最新的 `.zip` 文件，在 WordPress 后台 "外观 > 主题" 页面上传并启用。
 
 # 文档
 
@@ -35,7 +35,7 @@ Lyrargon 主题文档：[https://lyrargon.wenlei.top](https://lyrargon.wenlei.to
 
 # 注意
 
-Lyrargon 使用 [GPL V3.0](https://github.com/Andy17269/lyrargon/blob/main/LICENSE) 协议基于 solstice23 的 argon-theme 修改并开源，请遵守此协议进行二次开发与分发。
+Lyrargon 使用 [GPL V3.0](https://github.com/Andy17269/lyrargon-theme/blob/main/LICENSE) 协议基于 solstice23 的 argon-theme 修改并开源，请遵守此协议进行二次开发与分发。
 
 您**必须在页脚保留 Lyrargon 主题的名称及其链接**，否则请不要使用 Lyrargon 主题。
 

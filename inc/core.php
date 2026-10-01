@@ -249,7 +249,7 @@ switch ($argon_update_source) {
 	case "github":
     default:
 		$argonThemeUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-			'https://raw.githubusercontent.com/Andy17269/lyrargon/main/info.json',
+			'https://raw.githubusercontent.com/Andy17269/lyrargon-theme/main/info.json',
 			get_template_directory() . '/functions.php',
 			''
 		);
